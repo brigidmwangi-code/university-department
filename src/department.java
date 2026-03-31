@@ -9,17 +9,19 @@ public class Department {
 
         ArrayList<Student> students = new ArrayList<>();
 
-        
         students.add(new Student("Brigid Mwangi", 225458, "DBIT"));
         students.add(new Student("John Doe", 123456, "IT"));
 
-        
-        for (Student s : students) {
+        // SAVE to file
+        FileHandler.saveStudents(students);
+
+        // LOAD from file
+        ArrayList<Student> loadedStudents = FileHandler.loadStudents();
+
+        System.out.println("\nLoaded Students:");
+        for (Student s : loadedStudents) {
             s.displayInfo();
             System.out.println();
         }
-
-        Lecturer lecturer = new Lecturer("Kelvin Ouma", 301, 80000);
-        lecturer.displayInfo();
     }
 }
