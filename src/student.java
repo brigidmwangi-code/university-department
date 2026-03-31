@@ -2,7 +2,9 @@ public class Student extends Person {
 
     private String course;
 
-    public Student(String name, String id, String course) {
+    public Student(String name, String id, String course) {public String getCourse() {
+    return course;
+}
         super(name, id);   // calling parent constructor
         this.course = course;
     }
